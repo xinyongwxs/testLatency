@@ -5,9 +5,11 @@
   "scripts": {
     "start": "PORT=80 node server/www",
     "start:remote": "sudo PORT=80 node server/www",
-    "develop": "nodemon --inspect --exec babel-node src/www",
     "build": "rm -rf server && babel src --out-dir server",
-    "start:pro": "npm run build && npm run start:remote"
+    "start:pro": "npm run build && npm run start:remote",
+    "debug": "PORT=81 node --inspect server/www",
+    "develop": "nodemon --inspect --exec babel-node src/www",
+    "debug:pro": "npm run build && npm run debug"
   },
   "dependencies": {
     "compression": "^1.7.4",
