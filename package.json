@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=80 node server/www",
+    "start:remote": "sudo PORT=80 node server/www",
+    "develop": "nodemon --inspect --exec babel-node src/www",
+    "build": "rm -rf server && babel src --out-dir server",
+    "start:pro": "npm run build && npm run start:remote"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-http-proxy": "^1.5.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.7.1"
+  }
+}
